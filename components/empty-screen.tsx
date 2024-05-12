@@ -16,7 +16,7 @@ export function EmptyScreen() {
           <LocationComponent
             onLocationChange={async (lat, lon) => {
               const response = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.OPENWEATHER_API_KEY}`
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY}`
               );
               if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
