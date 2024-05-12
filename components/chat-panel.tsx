@@ -34,9 +34,8 @@ export function ChatPanel({
   const [aiState] = useAIState()
   const [messages, setMessages] = useUIState<typeof AI>()
   const { submitUserMessage } = useActions()
+  const [exampleMessages, setExampleMessages] = React.useState<{ heading: string; subheading: string; message: string; }[]>([]);
   const [shareDialogOpen, setShareDialogOpen] = React.useState(false)
-
-  const [exampleMessages, setExampleMessages] = React.useState([])
 
   React.useEffect(() => {
     const fetchExampleMessages = async () => {
@@ -57,16 +56,16 @@ export function ChatPanel({
             subheading: 'of flight BA142?',
             message: 'What is the status of flight BA142?'
           }
-        ]
+        ];
 
-        setExampleMessages(newExampleMessages)
+        setExampleMessages(newExampleMessages);
       } catch (error) {
-        console.error('Error fetching example messages:', error)
+        console.error('Error fetching example messages:', error);
       }
-    }
+    };
 
-    fetchExampleMessages()
-  }, [])
+    fetchExampleMessages();
+  }, []);
 
   return (
     <div className="fixed inset-x-0 bg-white/90 bottom-0 w-full duration-300 ease-in-out peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px] dark:from-10%">
