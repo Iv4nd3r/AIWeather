@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import LocationComponent from './location-component'
-
 import Image from 'next/image';
 
 export function EmptyScreen() {
@@ -15,23 +14,18 @@ export function EmptyScreen() {
         <div>
           <LocationComponent
             onLocationChange={async (lat, lon) => {
-              const response = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY}`
-              );
-              if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-              }
+              const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
               const data = await response.json();
               setWeatherData(data);
             }}
-          />
+          />        
         </div>
         <div className="flex">
           <p className="text-5xl ml-3">
             {weatherData ? `${(weatherData as any).main.temp}°C` : 'N/A'}
           </p>
           <Image
-            src={`http://openweathermap.org/img/wn/${weatherData ? (weatherData as any).weather[0].icon : ''}.png`}
+            src={`https://openweathermap.org/img/wn/${weatherData ? (weatherData as any).weather[0].icon : ''}.png`}
             alt="Weather Icon"
             width={50}
             height={50}
@@ -45,25 +39,25 @@ export function EmptyScreen() {
             </h2>
           </div>
         </div>
-<br />
+        <br />
         <div className="flex">
-                <div className="w-1/4">
-                  <h3>Pressure</h3>
-                  <p>{weatherData ? `${(weatherData as any).main.pressure} hPa` : 'N/A'}</p>
-                </div>
-                <div className="w-1/4">
-                  <h3>Humidity</h3>
-                  <p>{weatherData ? `${(weatherData as any).main.humidity}%` : 'N/A'}</p>
-                </div>
-                <div className="w-1/4">
-                  <h3>Visibility</h3>
-                  <p>{weatherData ? `${(weatherData as any).visibility} meters` : 'N/A'}</p>
-                </div>
-                <div className="w-1/4">
-                  <h3>Wind Speed</h3>
-                  <p>{weatherData ? `${(weatherData as any).wind.speed} m/s, ${(weatherData as any).wind.deg}°` : 'N/A'}</p>
-                </div>
-              </div>
+          <div className="w-1/4">
+            <h3>Pressure</h3>
+            <p>{weatherData ? `${(weatherData as any).main.pressure} hPa` : 'N/A'}</p>
+          </div>
+          <div className="w-1/4">
+            <h3>Humidity</h3>
+            <p>{weatherData ? `${(weatherData as any).main.humidity}%` : 'N/A'}</p>
+          </div>
+          <div className="w-1/4">
+            <h3>Visibility</h3>
+            <p>{weatherData ? `${(weatherData as any).visibility} meters` : 'N/A'}</p>
+          </div>
+          <div className="w-1/4">
+            <h3>Wind Speed</h3>
+            <p>{weatherData ? `${(weatherData as any).wind.speed} m/s, ${(weatherData as any).wind.deg}°` : 'N/A'}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

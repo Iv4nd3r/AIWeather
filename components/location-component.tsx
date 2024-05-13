@@ -1,6 +1,5 @@
 // LocationComponent.jsx
 
-import { promises } from 'dns';
 import React, { useEffect, useState } from 'react';
 
 interface LocationComponentProp {
