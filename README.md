@@ -1,10 +1,10 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="https://gemini-chatbot.vercel.rocks/og.png">
-  <h1 align="center">Next.js AI Chatbot</h1>
+<a href="https://aiweather.vercel.ai/">
+  <img alt="AIWeather: Weather forecasting with AI." src="https://aiweather.vercel.rocks/og.png">
+  <h1 align="center">AIWeather: Weather Forecasting with AI</h1>
 </a>
 
 <p align="center">
-  An open-source AI chatbot app template built with Next.js, the Vercel AI SDK, Google Gemini, and Vercel KV.
+  An open-source AI weather forecasting app built with Next.js, the Vercel AI SDK, Google Gemini, and OpenWeather API.
 </p>
 
 <p align="center">
@@ -21,12 +21,10 @@
 - [Next.js](https://nextjs.org) App Router
 - React Server Components (RSCs), Suspense, and Server Actions
 - [Vercel AI SDK](https://sdk.vercel.ai/docs) for streaming chat UI
-- Support for Google Gemini (default), OpenAI, Anthropic, Cohere, Hugging Face, or custom AI chat models and/or LangChain
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - [Radix UI](https://radix-ui.com) for headless component primitives
-  - Icons from [Phosphor Icons](https://phosphoricons.com)
-- Chat History, rate limiting, and session storage with [Vercel KV](https://vercel.com/storage/kv)
+- Integration with Google Gemini and OpenWeather API for AI-powered weather forecasting
+- Styling with [Tailwind CSS](https://tailwindcss.com)
+- Icons from [Phosphor Icons](https://phosphoricons.com)
+- Session storage with [Vercel KV](https://vercel.com/storage/kv)
 - [NextAuth.js](https://github.com/nextauthjs/next-auth) for authentication
 
 ## Model Providers
@@ -35,13 +33,13 @@ This template ships with Google Gemini `models/gemini-1.0-pro-001` as the defaul
 
 ## Deploy Your Own
 
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
+You can deploy your own version of the AIWeather to Vercel with one click:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=Next.js+Chat&demo-description=A+full-featured%2C+hackable+Next.js+AI+chatbot+built+by+Vercel+Labs&demo-url=https%3A%2F%2Fchat.vercel.ai%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4aVPvWuTmBvzM5cEdRdqeW%2F4234f9baf160f68ffb385a43c3527645%2FCleanShot_2023-06-16_at_17.09.21.png&project-name=Next.js+Chat&repository-name=nextjs-chat&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fgemini-chatbot&from=templates&skippable-integrations=1&env=GOOGLE_GENERATIVE_AI_API_KEY%2CAUTH_SECRET&envDescription=How+to+get+these+env+vars&envLink=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fgemini-chatbot%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden&stores=[{%22type%22:%22kv%22}])
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=AIWeather&demo-description=A+full-featured%2C+hackable+Next.js+AI+weather+forecasting+built+by+Vercel+Labs&demo-url=https%3A%2F%2Faiweather.vercel.ai%2F&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F4aVPvWuTmBvzM5cEdRdqeW%2F4234f9baf160f68ffb385a43c3527645%2FCleanShot_2023-06-16_at_17.09.21.png&project-name=AIWeather&repository-name=aiweather&repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Faiweather&from=templates&skippable-integrations=1&env=GOOGLE_GENERATIVE_AI_API_KEY%2CAUTH_SECRET&envDescription=How+to+get+these+env+vars&envLink=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Faiweather%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden&stores=[{%22type%22:%22kv%22}])
 
 ## Running locally
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+You will need to use the environment variables [defined in `.env.example`](.env.example) to run AIWeather. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
 
 > Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various Google Cloud and authentication provider accounts.
 
@@ -64,3 +62,5 @@ This library is created by [Vercel](https://vercel.com) and [Next.js](https://ne
 - Shu Ding ([@shuding\_](https://twitter.com/shuding_)) - [Vercel](https://vercel.com)
 - shadcn ([@shadcn](https://twitter.com/shadcn)) - [Vercel](https://vercel.com)
 - Jeremy Philemon ([@jrmyphlmn](https://twitter.com/jrmyphlmn)) - [Vercel](https://vercel.com)
+
+This project is adapted for AIWeather by Ivander Andreas Wijaya
