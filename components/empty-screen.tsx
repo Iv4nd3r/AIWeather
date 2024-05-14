@@ -12,13 +12,19 @@ export function EmptyScreen() {
           {weatherData ? `${(weatherData as any).name}, ${(weatherData as any).sys.country}` : 'Location Not Found'}
         </h1>
         <div>
+          <input
+            type="text"
+            placeholder="Not the right location ?"
+          />
+        </div>
+        <div>
           <LocationComponent
             onLocationChange={async (lat, lon) => {
               const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
               const data = await response.json();
               setWeatherData(data);
             }}
-          />        
+          />
         </div>
         <div className="flex">
           <p className="text-5xl ml-3">

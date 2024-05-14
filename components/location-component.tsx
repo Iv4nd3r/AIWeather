@@ -46,14 +46,14 @@ export default function LocationComponent({ onLocationChange }: LocationComponen
         getLocation();
     });
 
-    return (
-        <div>
-            <input
-                type="text"
-                placeholder="Not the right location ?"
-                value={manualLocation}
-                onChange={handleManualLocationChange}
-            />
-        </div>
-    );
+    return null;
 }
+
+/*<div>
+<input
+type="text"
+placeholder="Not the right location ?"
+value={manualLocation}
+onChange={handleManualLocationChange}
+/>
+</div> */
