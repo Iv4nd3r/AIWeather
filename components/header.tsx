@@ -66,7 +66,6 @@ export function Header() {
             <span className="hidden ml-2 md:flex">GitHub</span>
           </a>
         </Button>
-        </Button>
       </div>
     </header>
   )
